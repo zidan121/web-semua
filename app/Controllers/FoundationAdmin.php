@@ -6,7 +6,7 @@ use App\Models\SchoolModel;
 
 class FoundationAdmin extends BaseController
 {
-    public function setup(): string
+    public function setup()
     {
         $db = db_connect();
         if (! $db->tableExists('foundation_users')) {
@@ -51,7 +51,7 @@ class FoundationAdmin extends BaseController
         return view('foundation_admin/setup', ['error' => null]);
     }
 
-    public function login(): string
+    public function login()
     {
         if (session()->has('foundation_admin_id')) {
             return redirect()->to(site_url('admin/yayasan'));
@@ -91,7 +91,7 @@ class FoundationAdmin extends BaseController
         return redirect()->to(site_url('admin/yayasan/login'));
     }
 
-    public function index(): string
+    public function index()
     {
         $this->requireFoundationAdmin();
         $schools = (new SchoolModel())->orderBy('name', 'ASC')->findAll();
@@ -108,7 +108,7 @@ class FoundationAdmin extends BaseController
         ]);
     }
 
-    public function schools(): string
+    public function schools()
     {
         $this->requireFoundationAdmin();
         $model = new SchoolModel();
