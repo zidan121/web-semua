@@ -51,6 +51,9 @@
         @media(prefers-reduced-motion:reduce){.campus-card,.unit-card,.quick-icon,.unit-logo,.mini-pill{transform:none!important;transition:none!important}}
 
         @media(max-width:1000px){.hero-grid{gap:32px}.unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{gap:35px}.visual{min-height:380px}.floating-tag{right:-5px}.nav-links{gap:16px}}@media(max-width:720px){.container{width:calc(100% - 32px)}.nav{min-height:68px}.nav-links a:not(.nav-cta){display:none}.nav-cta{padding:9px 12px;font-size:.82rem}.hero{padding:55px 0 65px}.hero-grid{grid-template-columns:1fr;gap:25px}.hero h1{font-size:clamp(2.6rem,11vw,3.8rem)}.hero-copy{font-size:1rem}.visual{min-height:350px;margin:0 8px}.campus-card{transform:none}.campus-art{min-height:240px}.building{transform:translateX(-50%) scale(.88);transform-origin:bottom center}.floating-tag{right:-6px;bottom:32px}.quick-grid{grid-template-columns:1fr;gap:0;padding:12px 0}.quick-item,.quick-item:first-child{padding:12px 0;border-right:0;border-bottom:1px solid var(--line)}.quick-item:last-child{border-bottom:0}.content-section{padding:60px 0!important}.unit-grid{grid-template-columns:1fr}.unit-card{min-height:225px}.about-grid{grid-template-columns:1fr;gap:30px}.about-art{min-height:335px}.quote-card{inset:38px 24px auto;padding:21px}.quote-bottom{left:22px;right:22px;bottom:23px}.closing{padding-bottom:60px}.closing-panel{padding:27px 23px;align-items:flex-start;flex-direction:column}.footer-main{flex-direction:column}.copyright{flex-direction:column;gap:6px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+        .news-section{background:#fff}.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.news-card{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 6px 0 #e8eef6,0 18px 35px -28px #1537658a;transition:transform .25s,box-shadow .25s}.news-card:hover{transform:translateY(-6px);box-shadow:0 3px 0 #e8eef6,0 25px 35px -25px #1537658a}.news-cover{height:180px;background:linear-gradient(135deg,#dce9f7,#f9e7c4);display:grid;place-items:center;color:var(--navy);font-size:2.5rem;overflow:hidden}.news-cover img{width:100%;height:100%;object-fit:cover}.news-body{padding:20px}.news-meta{display:flex;gap:9px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.75rem;font-weight:750;margin-bottom:10px}.news-unit{padding:4px 8px;border-radius:99px;background:#edf3fb;color:var(--navy)}.news-card h3{font-size:1.08rem;line-height:1.45;color:var(--navy);margin:0 0 9px}.news-card p{color:var(--muted);font-size:.87rem;line-height:1.7;margin:0 0 15px}.news-link{color:var(--navy);font-size:.85rem;font-weight:900}.contact-section{background:var(--paper)}.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.contact-card{padding:23px;border:1px solid #e1e9f3;border-radius:18px;background:#fff;box-shadow:0 6px 0 #e7edf5,0 18px 30px -28px #15376570}.contact-card h3{margin:0 0 12px;color:var(--navy);font-size:1.08rem}.contact-detail{display:flex;gap:11px;align-items:flex-start;margin-top:12px;color:var(--muted);font-size:.88rem;overflow-wrap:anywhere}.contact-detail b{display:block;color:var(--ink);font-size:.78rem;margin-bottom:2px}.contact-detail a{color:var(--blue);font-weight:750}.contact-symbol{width:34px;height:34px;flex:0 0 34px;border-radius:10px;background:#edf3fb;color:var(--navy);display:grid;place-items:center;font-weight:900}.contact-empty{color:var(--muted);font-size:.88rem}.news-empty{grid-column:1/-1;padding:28px;border:1px dashed #c6d3e5;border-radius:17px;color:var(--muted);background:#f9fbfe}
+        @media(max-width:1000px){.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-grid{grid-template-columns:1fr}}
+        @media(max-width:720px){.news-grid{grid-template-columns:1fr}.news-cover{height:200px}.nav-links a:not(.nav-cta){display:none}}
     </style>
 </head>
 <body>
@@ -60,7 +63,7 @@
         <a class="brand" href="<?= site_url('/') ?>" aria-label="WEB SEMUA - Beranda Yayasan">
             <span class="brand-mark">AF</span><span style="font-size:1.12rem;letter-spacing:-.04em;color:var(--navy)">AL FIRDAUS<span>YAYASAN PENDIDIKAN</span></span>
         </a>
-        <div class="nav-links"><a href="#tentang">Tentang Yayasan</a><a href="#unit">Unit Pendidikan</a><a class="nav-cta" href="#unit">Jelajahi Sekolah <span aria-hidden="true">↗</span></a></div>
+        <div class="nav-links"><a href="#tentang">Profil</a><a href="#unit">Unit Pendidikan</a><a href="#berita">Berita</a><a href="#kontak">Kontak</a><a class="nav-cta" href="#unit">Jelajahi Sekolah <span aria-hidden="true">↗</span></a></div>
     </nav>
 </header>
 <main>
@@ -113,6 +116,34 @@
             </div>
         </div>
     </section>
+    <section class="content-section news-section" id="berita">
+        <div class="container">
+            <div class="section-head"><span class="kicker">Kabar terbaru</span><h2>Berita dari unit pendidikan</h2><p>Informasi dan kegiatan terbaru dari unit-unit pendidikan yang berada di bawah naungan yayasan.</p></div>
+            <div class="news-grid">
+                <?php if (! empty($latestNews)): ?>
+                    <?php foreach ($latestNews as $news): ?>
+                        <article class="news-card">
+                            <div class="news-cover">
+                                <?php if (! empty($news['cover_image_path'])): ?>
+                                    <img src="<?= base_url(esc($news['cover_image_path'])) ?>" alt="<?= esc($news['title']) ?>" loading="lazy">
+                                <?php else: ?>✦<?php endif ?>
+                            </div>
+                            <div class="news-body">
+                                <div class="news-meta"><span class="news-unit"><?= esc($news['school_name']) ?></span>
+                                    <?php if (! empty($news['published_at'])): ?><span><?= esc(date('d M Y', strtotime($news['published_at']))) ?></span><?php endif ?>
+                                </div>
+                                <h3><?= esc($news['title']) ?></h3>
+                                <p><?= esc($news['excerpt'] ?: 'Baca informasi selengkapnya di website unit pendidikan.') ?></p>
+                                <a class="news-link" href="<?= site_url('sekolah/' . $news['school_slug'] . '#berita') ?>">Baca di website unit →</a>
+                            </div>
+                        </article>
+                    <?php endforeach ?>
+                <?php else: ?>
+                    <div class="news-empty"><strong>Belum ada berita terbaru.</strong><br>Berita yang sudah diterbitkan oleh admin unit pendidikan akan tampil otomatis di bagian ini.</div>
+                <?php endif ?>
+            </div>
+        </div>
+    </section>
     <section class="content-section" id="tentang">
         <div class="container about-grid">
             <div class="about-art" aria-hidden="true">
@@ -130,13 +161,38 @@
             </div>
         </div>
     </section>
+    <section class="content-section contact-section" id="kontak">
+        <div class="container">
+            <div class="section-head"><span class="kicker">Alamat & kontak</span><h2>Hubungi unit pendidikan kami</h2><p>Informasi alamat dan kontak berikut diambil dari data masing-masing unit. Silakan hubungi unit yang ingin Anda kenal lebih dekat.</p></div>
+            <div class="contact-grid">
+                <?php
+                    $contactSchools = array_values(array_filter($schools, static function ($item) {
+                        return ! empty($item['address']) || ! empty($item['phone']) || ! empty($item['whatsapp']) || ! empty($item['email']);
+                    }));
+                ?>
+                <?php if (! empty($contactSchools)): ?>
+                    <?php foreach ($contactSchools as $school): ?>
+                        <article class="contact-card">
+                            <h3><?= esc($school['name']) ?></h3>
+                            <?php if (! empty($school['address'])): ?><div class="contact-detail"><span class="contact-symbol">⌖</span><div><b>Alamat</b><?= nl2br(esc($school['address'])) ?></div></div><?php endif ?>
+                            <?php if (! empty($school['phone'])): ?><div class="contact-detail"><span class="contact-symbol">☎</span><div><b>Telepon</b><a href="tel:<?= esc(preg_replace('/[^0-9+]/', '', $school['phone'])) ?>"><?= esc($school['phone']) ?></a></div></div><?php endif ?>
+                            <?php if (! empty($school['whatsapp'])): ?><div class="contact-detail"><span class="contact-symbol">WA</span><div><b>WhatsApp</b><a target="_blank" rel="noopener noreferrer" href="https://wa.me/<?= esc(preg_replace('/[^0-9]/', '', $school['whatsapp'])) ?>"><?= esc($school['whatsapp']) ?></a></div></div><?php endif ?>
+                            <?php if (! empty($school['email'])): ?><div class="contact-detail"><span class="contact-symbol">@</span><div><b>Email</b><a href="mailto:<?= esc($school['email']) ?>"><?= esc($school['email']) ?></a></div></div><?php endif ?>
+                        </article>
+                    <?php endforeach ?>
+                <?php else: ?>
+                    <div class="news-empty"><strong>Informasi alamat dan kontak belum diisi.</strong><br>Lengkapi data unit melalui admin yayasan agar informasi kontak dapat ditampilkan di beranda.</div>
+                <?php endif ?>
+            </div>
+        </div>
+    </section>
     <section class="closing"><div class="container"><div class="closing-panel"><div class="closing-copy"><h2>Mari mengenal keluarga besar Al Firdaus.</h2><p>Pilih unit pendidikan dan temukan informasi yang Anda butuhkan.</p></div><a class="btn btn-gold" href="#unit">Lihat semua unit <span aria-hidden="true">→</span></a></div></div></section>
 </main>
 <footer>
     <div class="container">
         <div class="footer-main">
             <div><a class="brand footer-brand" href="<?= site_url('/') ?>"><span class="brand-mark">AF</span><span style="font-size:1.08rem;letter-spacing:-.03em;color:#fff">AL FIRDAUS<span style="color:#aebdd2">YAYASAN PENDIDIKAN</span></span></a><p class="footer-description">Portal informasi Yayasan Al Firdaus Purwodadi dan unit-unit pendidikan di bawah naungannya.</p></div>
-            <div class="footer-links"><a href="#tentang">Tentang yayasan</a><a href="#unit">Unit pendidikan</a><a href="<?= site_url('admin/yayasan/login') ?>">Admin yayasan</a></div>
+            <div class="footer-links"><a href="#tentang">Profil yayasan</a><a href="#unit">Unit pendidikan</a><a href="#berita">Berita terbaru</a><a href="#kontak">Alamat & kontak</a><a href="<?= site_url('admin/yayasan/login') ?>">Admin yayasan</a></div>
         </div>
         <div class="copyright"><span>© <?= date('Y') ?> Yayasan Al Firdaus Purwodadi</span><span>Portal pendidikan · WEB SEMUA</span></div>
     </div>
