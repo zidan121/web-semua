@@ -1,8 +1,8 @@
 <?php
 
-namespace App\\Controllers;
+namespace App\Controllers;
 
-use App\\Models\\SchoolModel;
+use App\Models\\SchoolModel;
 
 class Home extends BaseController
 {
