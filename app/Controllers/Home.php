@@ -27,7 +27,15 @@ class Home extends BaseController
             ->get()
             ->getResultArray();
 
+        $siteSettings = [];
+        if ($db->tableExists('foundation_site_settings')) {
+            foreach ($db->table('foundation_site_settings')->get()->getResultArray() as $setting) {
+                $siteSettings[$setting['setting_key']] = $setting['setting_value'];
+            }
+        }
+
         return view('platform_home', [
+            'siteSettings' => $siteSettings,
             'schools' => $schools,
             'latestNews' => $latestNews,
         ]);
