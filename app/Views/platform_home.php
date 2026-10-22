@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yayasan Al Firdaus Purwodadi | WEB SEMUA</title>
-    <meta name="description" content="Portal Yayasan Al Firdaus Purwodadi. Kenali unit pendidikan KBIT, RAIT, SDIT, dan SMPIT dalam satu tempat.">
+    <title>Yayasan Bina Insani Grobogan | Portal Pendidikan</title>
+    <meta name="description" content="Portal resmi Yayasan Bina Insani Grobogan. Informasi profil, unit pendidikan, berita, dan kontak dalam satu tempat.">
     <meta name="theme-color" content="#102b52">
     <style>
         :root{--navy:#153765;--deep:#0c2140;--blue:#285b96;--gold:#f4aa32;--gold-light:#fff1d7;--ink:#17263d;--muted:#65758d;--line:#e5ebf3;--paper:#f5f8fc;--white:#fff;--shadow:0 22px 55px -35px #102b5260}
@@ -54,50 +54,68 @@
         .news-section{background:#fff}.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.news-card{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 6px 0 #e8eef6,0 18px 35px -28px #1537658a;transition:transform .25s,box-shadow .25s}.news-card:hover{transform:translateY(-6px);box-shadow:0 3px 0 #e8eef6,0 25px 35px -25px #1537658a}.news-cover{height:180px;background:linear-gradient(135deg,#dce9f7,#f9e7c4);display:grid;place-items:center;color:var(--navy);font-size:2.5rem;overflow:hidden}.news-cover img{width:100%;height:100%;object-fit:cover}.news-body{padding:20px}.news-meta{display:flex;gap:9px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.75rem;font-weight:750;margin-bottom:10px}.news-unit{padding:4px 8px;border-radius:99px;background:#edf3fb;color:var(--navy)}.news-card h3{font-size:1.08rem;line-height:1.45;color:var(--navy);margin:0 0 9px}.news-card p{color:var(--muted);font-size:.87rem;line-height:1.7;margin:0 0 15px}.news-link{color:var(--navy);font-size:.85rem;font-weight:900}.contact-section{background:var(--paper)}.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.contact-card{padding:23px;border:1px solid #e1e9f3;border-radius:18px;background:#fff;box-shadow:0 6px 0 #e7edf5,0 18px 30px -28px #15376570}.contact-card h3{margin:0 0 12px;color:var(--navy);font-size:1.08rem}.contact-detail{display:flex;gap:11px;align-items:flex-start;margin-top:12px;color:var(--muted);font-size:.88rem;overflow-wrap:anywhere}.contact-detail b{display:block;color:var(--ink);font-size:.78rem;margin-bottom:2px}.contact-detail a{color:var(--blue);font-weight:750}.contact-symbol{width:34px;height:34px;flex:0 0 34px;border-radius:10px;background:#edf3fb;color:var(--navy);display:grid;place-items:center;font-weight:900}.contact-empty{color:var(--muted);font-size:.88rem}.news-empty{grid-column:1/-1;padding:28px;border:1px dashed #c6d3e5;border-radius:17px;color:var(--muted);background:#f9fbfe}
         @media(max-width:1000px){.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-grid{grid-template-columns:1fr}}
         @media(max-width:720px){.news-grid{grid-template-columns:1fr}.news-cover{height:200px}.nav-links a:not(.nav-cta){display:none}}
+    
+        /* Yayasan Bina Insani Grobogan visual refresh */
+        :root{--navy:#092b52;--deep:#061b35;--blue:#1763a5;--gold:#f8bd4f;--gold-light:#fff2d5;--paper:#f3f7fc}
+        header{background:#08284cf5;border-bottom:1px solid #ffffff18}.brand{color:#fff}.brand span{color:#d2dfef}.brand-mark{background:linear-gradient(145deg,#fbd77e,#e7a72f);color:#092b52;box-shadow:0 5px 0 #9a6a1c;border-radius:50%}.nav-links{color:#f2f6fc}.nav-links a:hover{color:#ffd477}
+        .hero{padding:60px 0 76px;background:linear-gradient(90deg,#062347ed 0%,#0a2e55c9 38%,#0b2a4b24 74%),url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=90') center 48%/cover no-repeat;min-height:490px}
+        .hero-grid{grid-template-columns:.88fr 1.12fr;gap:30px}.hero h1{font-family:Georgia,'Times New Roman',serif;max-width:520px;font-size:clamp(3rem,5.1vw,4.65rem);letter-spacing:-.04em}.hero h1 em{color:#ffd071}.hero-copy{color:#f0f5fc;max-width:450px}.eyebrow{background:#ffffff18;border-color:#ffffff45}
+        .visual{min-height:380px}.campus-card{width:min(100%,570px);padding:10px;border-radius:26px;background:#ffffffed;transform:perspective(1200px) rotateY(-5deg) rotateX(2deg);box-shadow:0 12px 0 #d0dbea,0 24px 0 #8299b5,0 45px 75px #00152e75}
+        .campus-art{min-height:300px;border-radius:18px;background:#c5dced;position:relative}.hero-campus-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:18px}.campus-art .sun,.campus-art .cloud,.campus-art .hill,.campus-art .building,.campus-art .tree{display:none}
+        .campus-caption{padding:15px 9px 5px}.floating-tag{right:-8px;bottom:30px;background:linear-gradient(135deg,#fff,#f4f7fc);border-radius:16px;box-shadow:0 7px 0 #d3ddeb,0 15px 0 #849ab5,0 28px 48px #06162e50}
+        .quick-strip{background:#0a2b50;color:#fff;border:1px solid #45658a;border-radius:22px;position:relative;z-index:3;width:min(1160px,calc(100% - 44px));margin:-30px auto 0;box-shadow:0 12px 0 #08213f,0 24px 40px #061a3233}
+        .quick-grid{padding:20px 12px;grid-template-columns:repeat(3,1fr)}.quick-item{border-color:#ffffff20}.quick-item strong{color:#fff}.quick-item small{color:#c6d6e9}.quick-icon{background:linear-gradient(145deg,#ffe5a5,#e9aa35);color:#082b51;box-shadow:0 5px 0 #9c712c}
+        .section-head h2,.about-copy h2{font-family:Georgia,'Times New Roman',serif}.kicker{color:#b07a18}
+        .unit-grid{gap:18px}.unit-card{border-radius:22px;box-shadow:0 7px 0 #dbe4ef,0 14px 0 #c7d5e5,0 28px 36px -28px #1537659c}.unit-card:hover{transform:translateY(-8px) rotateX(1deg)}
+        .unit-logo{border-radius:50%;border:3px solid white}.about-art{background:linear-gradient(145deg,#0c3159,#2d6595);border:6px solid #fff;box-shadow:inset 0 0 0 10px #ffffff24,0 9px 0 #dfe8f3,0 20px 0 #cddbec,0 35px 45px -35px #15376570}.about-art:before{background:#ffffff13}.about-art:after{background:#f5c35e30}.quote-card{border-radius:20px}.quote-card h3{font-family:Georgia,'Times New Roman',serif}
+        .news-grid{gap:18px}.news-card{border-radius:20px;box-shadow:0 6px 0 #e0e8f2,0 15px 0 #cbd8e7,0 28px 36px -30px #15376590}.news-cover{height:165px}.news-card h3{font-family:Georgia,'Times New Roman',serif}
+        .contact-section{background:linear-gradient(135deg,#eef4fb,#f9fbff)}.contact-card{border-radius:20px;box-shadow:0 6px 0 #e0e8f2,0 14px 0 #cbd8e7}footer{background:#061b35}.closing-panel{background:linear-gradient(115deg,#061b35,#164c7d);border:1px solid #42648a}
+        @media(max-width:720px){.hero{padding:48px 0 65px;background-position:60% center}.hero-grid{grid-template-columns:1fr}.visual{min-height:300px}.campus-art{min-height:220px}.quick-strip{width:calc(100% - 32px);margin-top:-22px}.quick-grid{grid-template-columns:1fr}.quick-item{border-right:0}}
+
     </style>
 </head>
 <body>
 <div class="topline"></div>
 <header>
     <nav class="nav container" aria-label="Navigasi utama">
-        <a class="brand" href="<?= site_url('/') ?>" aria-label="WEB SEMUA - Beranda Yayasan">
-            <span class="brand-mark">AF</span><span style="font-size:1.12rem;letter-spacing:-.04em;color:var(--navy)">AL FIRDAUS<span>YAYASAN PENDIDIKAN</span></span>
+        <a class="brand" href="<?= site_url('/') ?>" aria-label="Yayasan Bina Insani Grobogan - Beranda">
+            <span class="brand-mark">BI</span><span style="font-size:1.02rem;letter-spacing:-.04em;color:var(--navy)">YAYASAN<span style="display:block;font-size:.66rem;letter-spacing:.06em;color:var(--muted)">BINA INSANI GROBOGAN</span></span>
         </a>
-        <div class="nav-links"><a href="#tentang">Profil</a><a href="#unit">Unit Pendidikan</a><a href="#berita">Berita</a><a href="#kontak">Kontak</a><a class="nav-cta" href="#unit">Jelajahi Sekolah <span aria-hidden="true">↗</span></a></div>
+        <div class="nav-links"><a href="#beranda">Beranda</a><a href="#tentang">Profil</a><a href="#unit">Unit Pendidikan</a><a href="#berita">Berita</a><a href="#kontak">Kontak</a><a class="nav-cta" href="<?= site_url('admin/yayasan/login') ?>">♙ Portal Yayasan</a></div>
     </nav>
 </header>
 <main>
-    <section class="hero">
+    <section class="hero" id="beranda">
         <div class="container hero-grid">
             <div>
-                <span class="eyebrow">Yayasan Al Firdaus Purwodadi</span>
-                <h1>Menumbuhkan generasi <em>berilmu</em>, berakhlak, dan siap melangkah.</h1>
-                <p class="hero-copy">Ruang pendidikan untuk tumbuh, belajar, dan membangun masa depan. Temukan unit pendidikan Al Firdaus dan kenali lingkungan belajar yang sesuai untuk keluarga Anda.</p>
+                <span class="eyebrow">Pendidikan Islam untuk Generasi Qur’ani</span>
+                <h1>Yayasan <em>Bina Insani</em> Grobogan</h1>
+                <p class="hero-copy">Membina generasi berilmu, berakhlak, dan mandiri melalui pendidikan Islam yang berkualitas dan berkelanjutan.</p>
                 <div class="hero-actions"><a class="btn btn-gold" href="#unit">Kenali unit pendidikan <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="#tentang">Tentang yayasan <span aria-hidden="true">↓</span></a></div>
                 <p class="hero-note">Satu yayasan · Empat unit pendidikan · Tumbuh bersama</p>
             </div>
-            <div class="visual" aria-label="Ilustrasi gedung sekolah dan lingkungan hijau">
+            <div class="visual" aria-label="Gedung kampus Yayasan Bina Insani Grobogan">
                 <div class="visual-glow"></div>
                 <div class="campus-card">
-                    <div class="campus-art">
+                    <div class="campus-art"><img class="hero-campus-photo" src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1100&q=85" alt="Gedung kampus pendidikan modern">
                         <div class="sun"></div><div class="cloud"></div><div class="hill back"></div><div class="hill"></div>
                         <div class="tree t1"></div><div class="tree t2"></div>
-                        <div class="building"><div class="roof"></div><div class="building-label">AL FIRDAUS</div><div class="window w1"></div><div class="window w2"></div><div class="door"></div></div>
+                        <div class="building"><div class="roof"></div><div class="building-label">BINA INSANI</div><div class="window w1"></div><div class="window w2"></div><div class="door"></div></div>
                     </div>
-                    <div class="campus-caption"><div><strong>Tempat bertumbuh dan belajar</strong><small>Membangun masa depan bersama</small></div><div class="caption-icon" aria-hidden="true">✦</div></div>
+                    <div class="campus-caption"><div><strong>Yayasan Bina Insani Grobogan</strong><small>Pendidikan Islam untuk generasi masa depan</small></div><div class="caption-icon" aria-hidden="true">✦</div></div>
                 </div>
                 <div class="floating-tag">Pendidikan bermakna<span>Untuk setiap tahap tumbuh</span></div>
             </div>
         </div>
     </section>
     <div class="quick-strip"><div class="container quick-grid">
-        <div class="quick-item"><div class="quick-icon" aria-hidden="true">⌂</div><div><strong>Lingkungan belajar</strong><small>Mendukung tumbuh kembang anak</small></div></div>
-        <div class="quick-item"><div class="quick-icon" aria-hidden="true">✧</div><div><strong>Nilai dan karakter</strong><small>Belajar dengan akhlak dan kepedulian</small></div></div>
-        <div class="quick-item"><div class="quick-icon" aria-hidden="true">↗</div><div><strong>Beragam tahap pendidikan</strong><small>Dari usia dini hingga menengah</small></div></div>
+        <div class="quick-item"><div class="quick-icon" aria-hidden="true">♟</div><div><strong>4 Unit Pendidikan</strong><small>KBIT · RAIT · SDIT · SMPIT</small></div></div>
+        <div class="quick-item"><div class="quick-icon" aria-hidden="true">🎓</div><div><strong>Peserta Didik</strong><small>Ruang tumbuh dan belajar</small></div></div>
+        <div class="quick-item"><div class="quick-icon" aria-hidden="true">📖</div><div><strong>Tenaga Pendidik</strong><small>Profesional dan berdedikasi</small></div></div>
     </div></div>
     <section class="content-section units" id="unit">
         <div class="container">
-            <div class="section-head"><span class="kicker">Unit pendidikan</span><h2>Temukan perjalanan belajar yang tepat</h2><p>Jelajahi website setiap unit untuk mengenal profil, program, kegiatan, dan informasi sekolah lebih dekat.</p></div>
+            <div class="section-head"><span class="kicker">Unit pendidikan</span><h2>Empat Jenjang Pendidikan</h2><p>Yayasan Bina Insani Grobogan menaungi unit pendidikan yang saling terintegrasi untuk membina generasi berakhlak mulia dan berprestasi.</p></div>
             <div class="unit-grid">
                 <?php if (! empty($schools)): ?>
                     <?php foreach ($schools as $school): ?>
@@ -118,7 +136,7 @@
     </section>
     <section class="content-section news-section" id="berita">
         <div class="container">
-            <div class="section-head"><span class="kicker">Kabar terbaru</span><h2>Berita dari unit pendidikan</h2><p>Informasi dan kegiatan terbaru dari unit-unit pendidikan yang berada di bawah naungan yayasan.</p></div>
+            <div class="section-head"><span class="kicker">Kabar terbaru</span><h2>Kegiatan dan Informasi Terkini</h2><p>Berita terbaru dari seluruh unit pendidikan Yayasan Bina Insani Grobogan.</p></div>
             <div class="news-grid">
                 <?php if (! empty($latestNews)): ?>
                     <?php foreach ($latestNews as $news): ?>
@@ -151,8 +169,8 @@
                 <div class="quote-bottom"><div class="mini-pill">Ilmu</div><div class="mini-pill">Akhlak</div><div class="mini-pill">Karya</div></div>
             </div>
             <div class="about-copy">
-                <span class="kicker">Tentang yayasan</span><h2>Membersamai keluarga dalam perjalanan pendidikan</h2>
-                <p>Yayasan Al Firdaus Purwodadi menaungi unit-unit pendidikan yang hadir untuk mendampingi proses belajar anak pada berbagai tahap. Portal ini menjadi pintu untuk mengenal setiap unit, menemukan informasi, dan mengikuti kegiatan pendidikan.</p>
+                <span class="kicker">Tentang yayasan</span><h2>Yayasan Bina Insani Grobogan</h2>
+                <p>Yayasan Bina Insani Grobogan berkomitmen menyelenggarakan pendidikan Islam yang berkualitas untuk membangun generasi Qur’ani, berilmu, berakhlak mulia, mandiri, dan siap menghadapi masa depan.</p>
                 <div class="value-list">
                     <div class="value"><div class="value-icon" aria-hidden="true">01</div><div><strong>Pembelajaran yang bermakna</strong><small>Mendorong rasa ingin tahu, kemampuan, dan kecintaan terhadap ilmu.</small></div></div>
                     <div class="value"><div class="value-icon" aria-hidden="true">02</div><div><strong>Karakter dan akhlak</strong><small>Menumbuhkan sikap baik, tanggung jawab, dan kepedulian dalam keseharian.</small></div></div>
@@ -163,7 +181,7 @@
     </section>
     <section class="content-section contact-section" id="kontak">
         <div class="container">
-            <div class="section-head"><span class="kicker">Alamat & kontak</span><h2>Hubungi unit pendidikan kami</h2><p>Informasi alamat dan kontak berikut diambil dari data masing-masing unit. Silakan hubungi unit yang ingin Anda kenal lebih dekat.</p></div>
+            <div class="section-head"><span class="kicker">Alamat & kontak</span><h2>Alamat dan Kontak</h2><p>Informasi alamat dan kontak berikut diambil dari data masing-masing unit. Silakan hubungi unit yang ingin Anda kenal lebih dekat.</p></div>
             <div class="contact-grid">
                 <?php
                     $contactSchools = array_values(array_filter($schools, static function ($item) {
@@ -186,15 +204,15 @@
             </div>
         </div>
     </section>
-    <section class="closing"><div class="container"><div class="closing-panel"><div class="closing-copy"><h2>Mari mengenal keluarga besar Al Firdaus.</h2><p>Pilih unit pendidikan dan temukan informasi yang Anda butuhkan.</p></div><a class="btn btn-gold" href="#unit">Lihat semua unit <span aria-hidden="true">→</span></a></div></div></section>
+    <section class="closing"><div class="container"><div class="closing-panel"><div class="closing-copy"><h2>Mari tumbuh bersama Yayasan Bina Insani Grobogan.</h2><p>Kenali program pendidikan dan temukan informasi yang Anda butuhkan.</p></div><a class="btn btn-gold" href="#unit">Lihat semua unit <span aria-hidden="true">→</span></a></div></div></section>
 </main>
 <footer>
     <div class="container">
         <div class="footer-main">
-            <div><a class="brand footer-brand" href="<?= site_url('/') ?>"><span class="brand-mark">AF</span><span style="font-size:1.08rem;letter-spacing:-.03em;color:#fff">AL FIRDAUS<span style="color:#aebdd2">YAYASAN PENDIDIKAN</span></span></a><p class="footer-description">Portal informasi Yayasan Al Firdaus Purwodadi dan unit-unit pendidikan di bawah naungannya.</p></div>
+            <div><a class="brand footer-brand" href="<?= site_url('/') ?>"><span class="brand-mark">BI</span><span style="font-size:1rem;letter-spacing:-.03em;color:#fff">YAYASAN BINA INSANI<span style="display:block;color:#aebdd2;font-size:.66rem;letter-spacing:.05em">GROBOGAN</span></span></a><p class="footer-description">Portal informasi Yayasan Bina Insani Grobogan dan unit-unit pendidikan di bawah naungannya.</p></div>
             <div class="footer-links"><a href="#tentang">Profil yayasan</a><a href="#unit">Unit pendidikan</a><a href="#berita">Berita terbaru</a><a href="#kontak">Alamat & kontak</a><a href="<?= site_url('admin/yayasan/login') ?>">Admin yayasan</a></div>
         </div>
-        <div class="copyright"><span>© <?= date('Y') ?> Yayasan Al Firdaus Purwodadi</span><span>Portal pendidikan · WEB SEMUA</span></div>
+        <div class="copyright"><span>© <?= date('Y') ?> Yayasan Bina Insani Grobogan</span><span>Portal pendidikan · WEB SEMUA</span></div>
     </div>
 </footer>
 </body>
