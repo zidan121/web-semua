@@ -131,7 +131,7 @@ img{max-width:100%}
 </head>
 <body>
 <header><div class="container nav">
-<a class="brand" href="<?= site_url('/') ?>"><span class="brand-logo">♛</span><span>YAYASAN<small>BINA INSANI GROBOGAN</small></span></a>
+<a class="brand" href="<?= site_url('/') ?>"><?php if (! empty($siteSettings['logo_path'])): ?><img class="brand-logo uploaded-logo" src="<?= base_url(esc($siteSettings['logo_path'])) ?>" alt="Logo yayasan"><?php else: ?><span class="brand-logo">✦</span><?php endif ?><span><?= esc($siteSettings['site_name'] ?? 'YAYASAN BINA INSANI GROBOGAN') ?><small><?= esc($siteSettings['tagline'] ?? 'Pendidikan Islam untuk Generasi Qur’ani') ?></small></span></a>
 <nav class="nav-links" aria-label="Navigasi utama"><a href="#beranda">Beranda</a><a href="#profil">Profil</a><a href="#unit">Unit Pendidikan</a><a href="#berita">Berita</a><a href="#kontak">Kontak</a></nav>
 <div class="nav-actions"><button class="search-btn" type="button" aria-label="Cari" onclick="document.getElementById('berita').scrollIntoView({behavior:'smooth'})">⌕</button><a class="portal-btn" href="<?= site_url('admin/yayasan/login') ?>">♟ &nbsp; Portal Yayasan</a></div>
 </div></header>
