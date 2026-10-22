@@ -144,7 +144,7 @@ img{max-width:100%}
 <div class="hero-buttons"><a class="btn btn-gold" href="#profil">Tentang Kami&nbsp; →</a><a class="btn btn-outline" href="#unit">Lihat Unit Pendidikan</a></div>
 <div class="hero-note">Satu yayasan · Empat unit pendidikan · Tumbuh bersama</div>
 </div><div></div></div></section>
-<div class="container stats-wrap"><div class="stats">
+<div class="container stats-wrap" <?= ($siteSettings['show_stats'] ?? '1') !== '1' ? 'hidden' : '' ?>><div class="stats">
 <div class="stat"><span class="stat-icon">♟</span><div><strong>4</strong><b>Unit Pendidikan</b><small>KBIT · RAIT · SDIT · SMPIT</small></div></div>
 <div class="stat"><span class="stat-icon">🎓</span><div><strong>Ribuan</strong><b>Peserta Didik</b><small>Dalam Pembinaan</small></div></div>
 <div class="stat"><span class="stat-icon">📖</span><div><b>Tenaga Pendidik</b><b>Profesional</b><small>Berpengalaman</small></div></div>
@@ -195,14 +195,19 @@ $unitPhotos = [
 <?php
 $contactSchools = array_values(array_filter($schools, static function ($item) { return ! empty($item['address']) || ! empty($item['phone']) || ! empty($item['whatsapp']) || ! empty($item['email']); }));
 $primaryContact = $contactSchools[0] ?? [];
+$contactAddress = trim((string) ($siteSettings['address'] ?? '')) !== '' ? $siteSettings['address'] : ($primaryContact['address'] ?? 'Grobogan, Jawa Tengah');
+$contactPhone = trim((string) ($siteSettings['phone'] ?? '')) !== '' ? $siteSettings['phone'] : ($primaryContact['phone'] ?? '');
+$contactWhatsapp = trim((string) ($siteSettings['whatsapp'] ?? '')) !== '' ? $siteSettings['whatsapp'] : ($primaryContact['whatsapp'] ?? '');
+$contactEmail = trim((string) ($siteSettings['email'] ?? '')) !== '' ? $siteSettings['email'] : ($primaryContact['email'] ?? '');
+$mapsUrl = trim((string) ($siteSettings['maps_url'] ?? '')) ?: 'https://www.google.com/maps/search/?api=1&query=Yayasan+Bina+Insani+Grobogan';
 ?>
-<div class="contact-item"><span class="contact-symbol">⌖</span><div><b>Alamat</b><?= ! empty($primaryContact['address']) ? nl2br(esc($primaryContact['address'])) : 'Grobogan, Jawa Tengah' ?></div></div>
-<div class="contact-item"><span class="contact-symbol">☎</span><div><b>Telepon</b><?php if (! empty($primaryContact['phone'])): ?><a href="tel:<?= esc(preg_replace('/[^0-9+]/','',$primaryContact['phone'])) ?>"><?= esc($primaryContact['phone']) ?></a><?php else: ?>Hubungi kantor yayasan<?php endif ?></div></div>
-<div class="contact-item"><span class="contact-symbol">◉</span><div><b>WhatsApp</b><?php if (! empty($primaryContact['whatsapp'])): ?><a target="_blank" rel="noopener noreferrer" href="https://wa.me/<?= esc(preg_replace('/[^0-9]/','',$primaryContact['whatsapp'])) ?>"><?= esc($primaryContact['whatsapp']) ?></a><?php else: ?>Informasi melalui admin yayasan<?php endif ?></div></div>
-<div class="contact-item"><span class="contact-symbol">✉</span><div><b>Email</b><?php if (! empty($primaryContact['email'])): ?><a href="mailto:<?= esc($primaryContact['email']) ?>"><?= esc($primaryContact['email']) ?></a><?php else: ?>Email yayasan<?php endif ?></div></div>
+<div class="contact-item"><span class="contact-symbol">⌖</span><div><b>Alamat</b><?= nl2br(esc($contactAddress)) ?></div></div>
+<div class="contact-item"><span class="contact-symbol">☎</span><div><b>Telepon</b><?php if ($contactPhone !== ''): ?><a href="tel:<?= esc(preg_replace('/[^0-9+]/','',$contactPhone)) ?>"><?= esc($contactPhone) ?></a><?php else: ?>Hubungi kantor yayasan<?php endif ?></div></div>
+<div class="contact-item"><span class="contact-symbol">◉</span><div><b>WhatsApp</b><?php if ($contactWhatsapp !== ''): ?><a target="_blank" rel="noopener noreferrer" href="https://wa.me/<?= esc(preg_replace('/[^0-9]/','',$contactWhatsapp)) ?>"><?= esc($contactWhatsapp) ?></a><?php else: ?>Informasi melalui admin yayasan<?php endif ?></div></div>
+<div class="contact-item"><span class="contact-symbol">✉</span><div><b>Email</b><?php if ($contactEmail !== ''): ?><a href="mailto:<?= esc($contactEmail) ?>"><?= esc($contactEmail) ?></a><?php else: ?>Email yayasan<?php endif ?></div></div>
 </div></div>
-<div class="map-card"><div class="map-art"><div class="map-pin">Yayasan Bina Insani<br>Grobogan</div></div><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Yayasan+Bina+Insani+Grobogan" target="_blank" rel="noopener noreferrer">Lihat di Google Maps &nbsp; →</a></div>
+<div class="map-card" <?= ($siteSettings['show_map'] ?? '1') !== '1' ? 'hidden' : '' ?>><div class="map-art"><div class="map-pin"><?= esc($siteSettings['site_name'] ?? 'Yayasan Bina Insani') ?></div></div><a class="map-btn" href="<?= esc($mapsUrl) ?>" target="_blank" rel="noopener noreferrer">Lihat di Google Maps &nbsp; →</a></div>
 </div></section>
 </main>
-<footer><div class="container footer-main"><a class="footer-brand" href="<?= site_url('/') ?>"><span class="brand-logo">♛</span><span>YAYASAN BINA INSANI GROBOGAN<small>Pendidikan Islam untuk Generasi Qur’ani</small></span></a><nav class="footer-links"><a href="#beranda">Beranda</a><a href="#profil">Profil</a><a href="#unit">Unit Pendidikan</a><a href="#berita">Berita</a><a href="#kontak">Kontak</a></nav><div class="socials"><span>f</span><span>◎</span><span>▶</span><span>↑</span></div></div><div class="copyright">© <?= date('Y') ?> <?= esc($siteSettings['site_name'] ?? 'Yayasan Bina Insani Grobogan') ?>. All rights reserved.</div></footer>
+<footer><div class="container footer-main"><a class="footer-brand" href="<?= site_url('/') ?>"><span class="brand-logo">♛</span><span>YAYASAN BINA INSANI GROBOGAN<small>Pendidikan Islam untuk Generasi Qur’ani</small></span></a><nav class="footer-links"><a href="#beranda">Beranda</a><a href="#profil">Profil</a><a href="#unit">Unit Pendidikan</a><a href="#berita">Berita</a><a href="#kontak">Kontak</a></nav><div class="socials"><span>f</span><span>◎</span><span>▶</span><span>↑</span></div></div><div class="copyright"><?= esc($siteSettings['footer_text'] ?? '') !== '' ? esc($siteSettings['footer_text']) : '© ' . date('Y') . ' ' . esc($siteSettings['site_name'] ?? 'Yayasan Bina Insani Grobogan') . '. All rights reserved.' ?></div></footer>
 </body></html>
