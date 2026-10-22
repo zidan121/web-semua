@@ -141,6 +141,22 @@ class FoundationAdmin extends BaseController
                 'slug' => $slug,
                 'tagline' => trim((string) $this->request->getPost('tagline')) ?: null,
             ];
+            $currentSchool = $id > 0 ? $model->find($id) : null;
+            foreach (['logo_file' => 'logo_path', 'photo_file' => 'hero_image_path'] as $input => $field) {
+                $file = $this->request->getFile($input);
+                if ($file && $file->isValid() && !$file->hasMoved()) {
+                    if (!in_array($file->getMimeType(), ['image/jpeg','image/png','image/webp','image/gif'], true)) return redirect()->back()->withInput()->with('error','Logo dan foto harus JPG, PNG, WEBP, atau GIF.');
+                    if ($file->getSizeByUnit('mb') > 5) return redirect()->back()->withInput()->with('error','Ukuran gambar maksimal 5 MB.');
+                    $folder = FCPATH . 'uploads/schools';
+                    if (!is_dir($folder) && !mkdir($folder, 0755, true) && !is_dir($folder)) return redirect()->back()->withInput()->with('error','Folder upload sekolah tidak dapat dibuat.');
+                    $filename = $file->getRandomName();
+                    if (!$file->move($folder, $filename)) return redirect()->back()->withInput()->with('error','Gagal menyimpan gambar sekolah.');
+                    $data[$field] = 'uploads/schools/' . $filename;
+                } elseif ($currentSchool && !empty($currentSchool[$field])) {
+                    $data[$field] = $currentSchool[$field];
+                }
+                if ($this->request->getPost('remove_' . $field) === '1') $data[$field] = null;
+            }
 
             if ($id > 0) {
                 $model->update($id, $data);
