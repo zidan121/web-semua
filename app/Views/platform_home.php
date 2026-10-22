@@ -94,6 +94,12 @@
         @media(max-width:720px){.hero.hero-showcase{padding:40px 0 55px;background-position:60% center}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:3.15rem}.hero .visual{min-height:270px}.hero .campus-art{min-height:205px}.quick-strip{width:calc(100% - 32px);margin-top:-20px}.quick-grid{grid-template-columns:1fr}.quick-item{padding:10px 4px;border-right:0}.about-grid{grid-template-columns:1fr}.about-art{min-height:280px}.unit-grid,.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.unit-card:before{height:100px}.unit-card h3{font-size:.88rem}.unit-card p{font-size:.75rem}}
         @media(max-width:430px){.unit-grid,.news-grid{grid-template-columns:1fr}.unit-card:before{height:150px}.hero h1{font-size:2.8rem}}
 
+    
+        .unit-card:nth-child(1){--unit-photo:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=85')}
+        .unit-card:nth-child(2){--unit-photo:url('https://images.unsplash.com/photo-1560785496-3c9d27877182?auto=format&fit=crop&w=800&q=85')}
+        .unit-card:nth-child(3){--unit-photo:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=85')}
+        .unit-card:nth-child(4){--unit-photo:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=85')}
+
     </style>
 </head>
 <body>
