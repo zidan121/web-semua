@@ -170,7 +170,7 @@ $unitPhotos = [
 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=85'
 ];
 ?>
-<img class="unit-photo" src="<?= esc($unitPhotos[$index % count($unitPhotos)]) ?>" alt="Lingkungan <?= esc($school['name']) ?>" loading="lazy">
+<?php $schoolPhoto = $school['hero_image_path'] ?? ''; $schoolPhotoUrl = $schoolPhoto ? (preg_match('#^https?://#i', $schoolPhoto) ? $schoolPhoto : base_url($schoolPhoto)) : $unitPhotos[$index % count($unitPhotos)]; ?><img class="unit-photo" src="<?= esc($schoolPhotoUrl) ?>" alt="Lingkungan <?= esc($school['name']) ?>" loading="lazy">
 <div class="unit-inner"><div class="unit-badge"><?php if (! empty($school['logo_path'])): ?><img src="<?= base_url(esc($school['logo_path'])) ?>" alt="" style="width:100%;height:100%;object-fit:contain;border-radius:50%;background:white"><?php else: ?><?= ['♟','♙','🎓','▣'][$index % 4] ?><?php endif ?></div>
 <h3><?= esc($school['name']) ?></h3><div class="unit-subtitle"><?= esc($school['tagline'] ?: ['Kelompok Bermain Islam Terpadu','Raudhatul Athfal Islam Terpadu','Sekolah Dasar Islam Terpadu','Sekolah Menengah Pertama Islam Terpadu'][$index % 4]) ?></div>
 <p><?= esc($school['tagline'] ?: 'Membina generasi berilmu, berakhlak mulia dan mandiri melalui pembelajaran terpadu.') ?></p>
