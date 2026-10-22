@@ -72,6 +72,28 @@
         .contact-section{background:linear-gradient(135deg,#eef4fb,#f9fbff)}.contact-card{border-radius:20px;box-shadow:0 6px 0 #e0e8f2,0 14px 0 #cbd8e7}footer{background:#061b35}.closing-panel{background:linear-gradient(115deg,#061b35,#164c7d);border:1px solid #42648a}
         @media(max-width:720px){.hero{padding:48px 0 65px;background-position:60% center}.hero-grid{grid-template-columns:1fr}.visual{min-height:300px}.campus-art{min-height:220px}.quick-strip{width:calc(100% - 32px);margin-top:-22px}.quick-grid{grid-template-columns:1fr}.quick-item{border-right:0}}
 
+    
+        /* Pixel-match refinement for the supplied Bina Insani reference */
+        :root{--navy:#082b52;--deep:#061c37;--blue:#1763a5;--gold:#f8c15c;--gold-light:#fff1cf;--paper:#f2f7fc;--ink:#112b4c;--muted:#5c708a}
+        header{background:#06264a;color:#fff;border-bottom:1px solid #ffffff25}
+        .brand{color:#fff}.brand-mark{background:linear-gradient(145deg,#ffe49a,#e9a82d);color:#082b52;border-radius:50%;box-shadow:0 4px 0 #a8781e}
+        .nav-links{color:#f4f7fc}.nav-links a:hover{color:#ffd16d}.nav-cta{border-radius:999px;background:linear-gradient(135deg,#ffe8aa,#f3b73d);box-shadow:0 4px 0 #a8781e}
+        .hero.hero-showcase{min-height:390px;padding:48px 0 72px;background:linear-gradient(90deg,#06264af2 0%,#092d54d9 28%,#092d5433 58%,#092d5410 100%),url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=90') center 49%/cover no-repeat}
+        .hero-grid{grid-template-columns:.75fr 1.25fr;gap:24px}.hero h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.9rem,4.8vw,4.25rem);line-height:.99;letter-spacing:-.04em;margin:16px 0}.hero h1 em{color:#ffd071}.hero-copy{font-size:.98rem;line-height:1.55;color:#f2f6fc;max-width:400px}
+        .hero .visual{min-height:310px}.hero .campus-card{width:min(100%,560px);padding:9px;border-radius:24px;transform:perspective(1100px) rotateY(-5deg) rotateX(2deg);box-shadow:0 10px 0 #cdd9e7,0 21px 0 #8199b7,0 36px 60px #06162e75}.hero .campus-art{min-height:255px;border-radius:17px}.hero-campus-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:17px}.hero .campus-art .sun,.hero .campus-art .cloud,.hero .campus-art .hill,.hero .campus-art .building,.hero .campus-art .tree{display:none}
+        .hero .campus-caption{padding:13px 8px 4px}.hero .floating-tag{right:-5px;bottom:22px}
+        .quick-strip{width:min(1160px,calc(100% - 44px));margin:-28px auto 0;position:relative;z-index:4;background:linear-gradient(120deg,#08294e,#123f70);border:1px solid #55769c;border-radius:20px;box-shadow:0 8px 0 #092443,0 18px 34px #082b5230;color:#fff}
+        .quick-grid{grid-template-columns:repeat(4,minmax(0,1fr));padding:18px 12px;gap:5px}.quick-item{padding:0 12px;border-color:#ffffff22}.quick-item strong{color:#fff}.quick-item small{color:#d2dfed}.quick-icon{background:linear-gradient(145deg,#ffe7a8,#edb13b);color:#082b52;border-radius:13px;box-shadow:0 4px 0 #a87a29}
+        .content-section{padding:56px 0!important}.section-head{margin-bottom:25px}.section-head h2,.about-copy h2{font-family:Georgia,'Times New Roman',serif;color:#082b52}.kicker{color:#a86d0a}
+        .about-grid{grid-template-columns:1fr 1fr;gap:35px}.about-art{min-height:290px;border-radius:22px;overflow:hidden;position:relative;transform:none;background:#c8dced;box-shadow:0 7px 0 #d7e1ed,0 17px 30px -20px #15376580}.about-art:before,.about-art:after{display:none}.about-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.quote-card{inset:auto 18px 18px!important;top:auto!important;padding:17px 20px;border-radius:15px;background:#082b52d9;color:#fff;transform:none;box-shadow:0 7px 0 #041a31a8}.quote-card h3{font-size:1rem;color:#fff;margin:2px 0 5px}.quote-card p{font-size:.8rem;color:#e0eafa}.quote-mark{font-size:1.8rem}.quote-bottom{display:none}
+        .unit-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.unit-card{padding:0 0 17px;border-radius:20px;overflow:hidden;box-shadow:0 6px 0 #dce5f0,0 13px 0 #cbd8e8,0 25px 32px -27px #1537659c}.unit-card:before{content:"";display:block;height:115px;background-image:var(--unit-photo);background-size:cover;background-position:center}.unit-logo{margin:-25px 13px 8px;width:49px;height:49px;border:3px solid white;border-radius:50%;position:relative;z-index:2}.unit-card h3{margin:0 14px 6px;font-size:.98rem}.unit-card p{margin:0 14px 14px;font-size:.8rem;line-height:1.5}.unit-link{margin:0 14px;font-size:.8rem}
+        .news-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.news-card{border-radius:16px;box-shadow:0 5px 0 #e0e8f2,0 11px 0 #cbd8e7,0 22px 30px -25px #15376590}.news-cover{height:105px}.news-body{padding:13px}.news-card h3{font-size:.94rem;line-height:1.35}.news-card p{font-size:.78rem;line-height:1.5}.news-meta{font-size:.67rem}
+        .contact-section{background:#06264a;color:#fff}.contact-section .section-head h2,.contact-section .section-head p{color:#fff}.contact-card{background:#0b3158;border-color:#345578;box-shadow:0 5px 0 #041a31,0 12px 22px #00172d55}.contact-card h3,.contact-detail b{color:#fff}.contact-detail{color:#d2dfed}.contact-symbol{background:#f5c15c;color:#092b52}
+        footer{background:#04182f}.closing-panel{background:linear-gradient(115deg,#061b35,#164c7d);box-shadow:0 7px 0 #0b203d,0 16px 0 #07172e}
+        @media(max-width:1000px){.unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+        @media(max-width:720px){.hero.hero-showcase{padding:40px 0 55px;background-position:60% center}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:3.15rem}.hero .visual{min-height:270px}.hero .campus-art{min-height:205px}.quick-strip{width:calc(100% - 32px);margin-top:-20px}.quick-grid{grid-template-columns:1fr}.quick-item{padding:10px 4px;border-right:0}.about-grid{grid-template-columns:1fr}.about-art{min-height:280px}.unit-grid,.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.unit-card:before{height:100px}.unit-card h3{font-size:.88rem}.unit-card p{font-size:.75rem}}
+        @media(max-width:430px){.unit-grid,.news-grid{grid-template-columns:1fr}.unit-card:before{height:150px}.hero h1{font-size:2.8rem}}
+
     </style>
 </head>
 <body>
@@ -85,11 +107,11 @@
     </nav>
 </header>
 <main>
-    <section class="hero" id="beranda">
+    <section class="hero hero-showcase" id="beranda">
         <div class="container hero-grid">
             <div>
                 <span class="eyebrow">Pendidikan Islam untuk Generasi Qur’ani</span>
-                <h1>Yayasan <em>Bina Insani</em> Grobogan</h1>
+                <h1>Yayasan<br><em>Bina Insani</em><br>Grobogan</h1>
                 <p class="hero-copy">Membina generasi berilmu, berakhlak, dan mandiri melalui pendidikan Islam yang berkualitas dan berkelanjutan.</p>
                 <div class="hero-actions"><a class="btn btn-gold" href="#unit">Kenali unit pendidikan <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="#tentang">Tentang yayasan <span aria-hidden="true">↓</span></a></div>
                 <p class="hero-note">Satu yayasan · Empat unit pendidikan · Tumbuh bersama</p>
@@ -111,8 +133,25 @@
     <div class="quick-strip"><div class="container quick-grid">
         <div class="quick-item"><div class="quick-icon" aria-hidden="true">♟</div><div><strong>4 Unit Pendidikan</strong><small>KBIT · RAIT · SDIT · SMPIT</small></div></div>
         <div class="quick-item"><div class="quick-icon" aria-hidden="true">🎓</div><div><strong>Peserta Didik</strong><small>Ruang tumbuh dan belajar</small></div></div>
-        <div class="quick-item"><div class="quick-icon" aria-hidden="true">📖</div><div><strong>Tenaga Pendidik</strong><small>Profesional dan berdedikasi</small></div></div>
+        <div class="quick-item"><div class="quick-icon" aria-hidden="true">📖</div><div><strong>Tenaga Pendidik</strong><small>Profesional dan berdedikasi</small></div></div><div class="quick-item"><div class="quick-icon" aria-hidden="true">♧</div><div><strong>Lingkungan Islami</strong><small>Aman, nyaman dan kondusif</small></div></div>
     </div></div>
+    <section class="content-section" id="tentang">
+        <div class="container about-grid">
+            <div class="about-art" aria-label="Generasi muda belajar bersama"><img class="about-photo" src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1100&q=85" alt="Murid belajar bersama guru" loading="lazy">
+                <div class="quote-card"><div class="quote-mark">“</div><h3>Pendidikan bukan hanya tentang hari ini, tetapi tentang masa depan yang kita bangun bersama.</h3><p>Setiap anak memiliki potensi untuk tumbuh dan memberikan kebaikan.</p></div>
+                <div class="quote-bottom"><div class="mini-pill">Ilmu</div><div class="mini-pill">Akhlak</div><div class="mini-pill">Karya</div></div>
+            </div>
+            <div class="about-copy">
+                <span class="kicker">Profil yayasan</span><h2>Yayasan Bina Insani Grobogan</h2>
+                <p>Yayasan Bina Insani Grobogan berkomitmen menyelenggarakan pendidikan Islam yang berkualitas untuk membangun generasi Qur’ani, berilmu, berakhlak mulia, mandiri, dan siap menghadapi masa depan.</p>
+                <div class="value-list">
+                    <div class="value"><div class="value-icon" aria-hidden="true">01</div><div><strong>Pembelajaran yang bermakna</strong><small>Mendorong rasa ingin tahu, kemampuan, dan kecintaan terhadap ilmu.</small></div></div>
+                    <div class="value"><div class="value-icon" aria-hidden="true">02</div><div><strong>Karakter dan akhlak</strong><small>Menumbuhkan sikap baik, tanggung jawab, dan kepedulian dalam keseharian.</small></div></div>
+                    <div class="value"><div class="value-icon" aria-hidden="true">03</div><div><strong>Tumbuh bersama keluarga</strong><small>Membangun hubungan yang baik antara lingkungan pendidikan dan keluarga.</small></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="content-section units" id="unit">
         <div class="container">
             <div class="section-head"><span class="kicker">Unit pendidikan</span><h2>Empat Jenjang Pendidikan</h2><p>Yayasan Bina Insani Grobogan menaungi unit pendidikan yang saling terintegrasi untuk membina generasi berakhlak mulia dan berprestasi.</p></div>
@@ -159,23 +198,6 @@
                 <?php else: ?>
                     <div class="news-empty"><strong>Belum ada berita terbaru.</strong><br>Berita yang sudah diterbitkan oleh admin unit pendidikan akan tampil otomatis di bagian ini.</div>
                 <?php endif ?>
-            </div>
-        </div>
-    </section>
-    <section class="content-section" id="tentang">
-        <div class="container about-grid">
-            <div class="about-art" aria-hidden="true">
-                <div class="quote-card"><div class="quote-mark">“</div><h3>Pendidikan bukan hanya tentang hari ini, tetapi tentang masa depan yang kita bangun bersama.</h3><p>Setiap anak memiliki potensi untuk tumbuh dan memberikan kebaikan.</p></div>
-                <div class="quote-bottom"><div class="mini-pill">Ilmu</div><div class="mini-pill">Akhlak</div><div class="mini-pill">Karya</div></div>
-            </div>
-            <div class="about-copy">
-                <span class="kicker">Tentang yayasan</span><h2>Yayasan Bina Insani Grobogan</h2>
-                <p>Yayasan Bina Insani Grobogan berkomitmen menyelenggarakan pendidikan Islam yang berkualitas untuk membangun generasi Qur’ani, berilmu, berakhlak mulia, mandiri, dan siap menghadapi masa depan.</p>
-                <div class="value-list">
-                    <div class="value"><div class="value-icon" aria-hidden="true">01</div><div><strong>Pembelajaran yang bermakna</strong><small>Mendorong rasa ingin tahu, kemampuan, dan kecintaan terhadap ilmu.</small></div></div>
-                    <div class="value"><div class="value-icon" aria-hidden="true">02</div><div><strong>Karakter dan akhlak</strong><small>Menumbuhkan sikap baik, tanggung jawab, dan kepedulian dalam keseharian.</small></div></div>
-                    <div class="value"><div class="value-icon" aria-hidden="true">03</div><div><strong>Tumbuh bersama keluarga</strong><small>Membangun hubungan yang baik antara lingkungan pendidikan dan keluarga.</small></div></div>
-                </div>
             </div>
         </div>
     </section>
