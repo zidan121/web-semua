@@ -10,6 +10,45 @@
 .panel,.card,.table-wrap{background:#fff;border:1px solid var(--admin-line);border-radius:16px;box-shadow:0 8px 26px #102f5109}.panel{padding:22px;margin:18px 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.field{display:grid;gap:6px}label{font-weight:700;font-size:.9rem}input:not([type=checkbox]):not([type=file]),textarea{width:100%;padding:11px;border:1px solid #d3deeb;border-radius:9px;font:inherit;background:#fff}input:focus,textarea:focus{outline:3px solid #dbeafe;border-color:#6796c6}textarea{min-height:85px}.btn,a.btn{display:inline-block;background:#123d6b;color:#fff;padding:10px 14px;border:0;border-radius:9px;text-decoration:none;font:inherit;font-weight:800;cursor:pointer}.btn:hover,a.btn:hover{background:#0b2c50}.notice{padding:13px 15px;border-radius:10px;background:#e5f8ed;color:#17623b;margin:12px 0}.error{background:#fff0f0;color:#9e2020}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:13px;border-bottom:1px solid #edf0f5}th{background:#f8fafd;color:#64748b;font-size:.82rem}
 @media(max-width:850px){.side{width:218px}.main,.wrap{margin-left:218px;width:calc(100% - 218px);padding:24px 17px}.grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.side{position:relative;inset:auto;width:100%;height:auto;padding:12px}.brand{padding:0 5px 10px;font-size:15px}.brand-mark{width:32px;height:32px}.side nav{display:flex;flex-wrap:wrap;gap:4px}.nav-item{padding:8px 10px;font-size:11px;gap:6px}.nav-item>span{width:20px;height:20px;flex-basis:20px;font-size:13px}.nav-caption,.side-foot{display:none}.nav-item.logout{margin-top:0}.main,.wrap{margin:0;width:100%;padding:20px 13px}.grid{grid-template-columns:1fr}.panel{padding:15px}.table-wrap{overflow:auto}}
+/* School management UI polish */
+.main>p:first-child{display:inline-flex;align-items:center;padding:6px 11px;border-radius:99px;background:#e7effa;color:#28527d;font-size:10px;font-weight:900;letter-spacing:.13em}
+.main h1{font-size:clamp(28px,3vw,36px);margin:8px 0 5px!important;letter-spacing:-.04em}
+.main>p:nth-of-type(2){margin:8px 0 22px}
+.main>section.panel{padding:24px;margin:18px 0 22px;border-radius:19px;box-shadow:0 10px 28px #102f5109}
+.panel h2{font-size:21px;color:#0b2b51;letter-spacing:-.025em;margin:0 0 19px}
+.grid{gap:17px;align-items:start}
+.field{min-width:0}
+.field label{font-size:12px;color:#304967;font-weight:800}
+input:not([type=checkbox]):not([type=file]),textarea{min-height:44px;border:1px solid #d8e2ef;border-radius:11px;padding:11px 13px;transition:border-color .18s,box-shadow .18s}
+input:focus,textarea:focus{outline:0!important;border-color:#7ba8d8!important;box-shadow:0 0 0 4px #dcecff}
+input[type=file]{display:block;width:100%;min-width:0;padding:10px;border:1px dashed #b7c9de;border-radius:11px;background:#f8fbff;color:#536981;font:12px/1.4 inherit;cursor:pointer}
+input[type=file]::file-selector-button{border:0;border-radius:7px;background:#e2edf9;color:#164675;font-weight:800;padding:8px 10px;margin-right:9px;cursor:pointer}
+.btn,a.btn{border-radius:10px;background:linear-gradient(135deg,#174b7f,#0a2b50);box-shadow:0 4px 0 #dbe5f0;padding:11px 17px;transition:transform .15s,box-shadow .15s}
+.btn:hover,a.btn:hover{transform:translateY(-1px);box-shadow:0 6px 12px #0b2b5020;background:#174b7f}
+.notice{border:1px solid #c9efdb;border-left:4px solid #38a875;border-radius:12px;padding:14px 17px;background:#edfbf3;color:#176746}
+.error{border:1px solid #f3d1d1;border-left:4px solid #dc6c6c;border-radius:12px;padding:14px 17px;margin:12px 0;background:#fff4f4;color:#982c2c}
+.table-wrap{border-radius:15px;box-shadow:0 8px 25px #102f5108;overflow:auto}
+table{width:100%;min-width:1060px;border-collapse:separate;border-spacing:0}
+th{padding:15px 16px;background:#f7f9fd;color:#74849a;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid #e8eef5;white-space:nowrap}
+td{padding:15px 13px;vertical-align:top;border-bottom:1px solid #edf1f6;font-size:13px}
+tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#fbfdff}
+td:nth-child(1){font-weight:800;color:#173c65;min-width:180px}td:nth-child(2){color:#60738b;font-family:ui-monospace,monospace;font-size:12px}
+td:nth-child(3){white-space:nowrap;font-weight:800;color:#168052}
+td:nth-child(4){min-width:510px}
+td:nth-child(4) form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+td:nth-child(4) form>input:not([type=hidden]):not([type=file]){margin:0!important;min-width:0}
+td:nth-child(4) form>div{grid-column:1/-1}
+td:nth-child(4) form>label{font-size:11px;color:#536a83;margin:2px 0 0!important}
+td:nth-child(4) form>input[type=file]{margin:0}
+td:nth-child(4) form>button{justify-self:start}
+td:nth-child(4) form>label:has(input[type=checkbox]){display:flex!important;align-items:center;gap:7px;font-weight:600!important}
+td:nth-child(4) form>label input[type=checkbox]{accent-color:#164675}
+td:nth-child(5){min-width:130px}
+.inline{display:inline}
+.btn-small{font-size:11px;padding:8px 10px}
+.btn-warn{background:linear-gradient(135deg,#b45339,#8c2f27)!important;box-shadow:0 4px 0 #f4dfda!important}
+@media(max-width:850px){.main>section.panel{padding:18px}.grid{grid-template-columns:1fr 1fr}.main,.wrap{padding:22px 16px}table{min-width:1000px}}
+@media(max-width:620px){.main>section.panel{padding:15px;border-radius:15px}.grid{grid-template-columns:1fr;gap:13px}.main h1{font-size:28px}.panel h2{font-size:19px}table{min-width:980px}td:nth-child(4) form{grid-template-columns:1fr}.main,.wrap{padding:18px 12px}}
 </style></head><body><div class="layout"><aside class="side"><a class="brand" href="<?= site_url('admin/yayasan') ?>"><span class="brand-mark">✦</span><span>WEB <b>SEMUA</b><small>ADMIN YAYASAN</small></span></a><nav><a class="nav-item DASH" href="<?= site_url('admin/yayasan') ?>"><span>▦</span>Dashboard</a><a class="nav-item SCHOOLS active" href="<?= site_url('admin/yayasan/sekolah') ?>"><span>▤</span>Kelola sekolah</a><a class="nav-item SETTINGS" href="<?= site_url('admin/yayasan/tampilan') ?>"><span>⚙</span>Pengaturan website</a><div class="nav-caption">TAUTAN PUBLIK</div><a class="nav-item" href="<?= site_url('/') ?>" target="_blank" rel="noopener"><span>↗</span>Lihat portal publik</a><a class="nav-item logout" href="<?= site_url('admin/yayasan/logout') ?>"><span>⇥</span>Keluar</a></nav><div class="side-foot"><span class="online-dot"></span> Panel administrasi<br><small>WEB SEMUA · Yayasan</small></div></aside>
 <main class="main"><p class="muted" style="margin:0">PENGELOLAAN UNIT</p><h1 style="margin:5px 0">Kelola sekolah</h1><p class="muted">Data disimpan pada tabel schools yang sudah ada.</p>
 <?php if (! empty($success)): ?><div class="notice"><?= esc($success) ?></div><?php endif ?><?php if (! empty($error)): ?><div class="error"><?= esc($error) ?></div><?php endif ?>
