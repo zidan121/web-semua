@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Yayasan Bina Insani Grobogan</title>
+<title><?= esc($siteSettings['site_name'] ?? 'Yayasan Bina Insani Grobogan') ?></title>
 <meta name="description" content="Website Yayasan Bina Insani Grobogan: profil, unit pendidikan, berita dan kontak.">
 <meta name="theme-color" content="#06264a">
 <link rel="preconnect" href="https://images.unsplash.com">
@@ -137,9 +137,9 @@ img{max-width:100%}
 </div></header>
 <main>
 <section class="hero" id="beranda"><div class="container hero-grid"><div class="hero-copy">
-<span class="eyebrow">Pendidikan Islam untuk Generasi Qur’ani</span>
-<h1>Yayasan<br><em>Bina Insani</em><br>Grobogan</h1>
-<p>Membina generasi berilmu, berakhlak, dan mandiri melalui pendidikan Islam yang berkualitas dan berkelanjutan.</p>
+<span class="eyebrow"><?= esc($siteSettings['tagline'] ?? 'Pendidikan Islam untuk Generasi Qur’ani') ?></span>
+<h1><?= esc($siteSettings['hero_title'] ?? 'Yayasan Bina Insani Grobogan') ?></h1>
+<p><?= esc($siteSettings['hero_description'] ?? 'Membina generasi berilmu, berakhlak, dan mandiri melalui pendidikan Islam yang berkualitas dan berkelanjutan.') ?></p>
 <div class="hero-buttons"><a class="btn btn-gold" href="#profil">Tentang Kami&nbsp; →</a><a class="btn btn-outline" href="#unit">Lihat Unit Pendidikan</a></div>
 <div class="hero-note">Satu yayasan · Empat unit pendidikan · Tumbuh bersama</div>
 </div><div></div></div></section>
@@ -149,13 +149,13 @@ img{max-width:100%}
 <div class="stat"><span class="stat-icon">📖</span><div><b>Tenaga Pendidik</b><b>Profesional</b><small>Berpengalaman</small></div></div>
 <div class="stat"><span class="stat-icon">♜</span><div><b>Lingkungan</b><b>Islami & Kondusif</b><small>Untuk Tumbuh Kembang</small></div></div>
 </div></div>
-<section class="section" id="profil"><div class="container profile-grid">
-<div class="profile-copy"><div class="section-tag">Profil Yayasan</div><h2>Yayasan Bina Insani Grobogan</h2><p>Yayasan Bina Insani Grobogan adalah lembaga pendidikan Islam yang berkomitmen menyelenggarakan pendidikan berkualitas untuk membangun generasi Qur’ani, berilmu, berakhlak mulia, dan siap menghadapi tantangan masa depan.</p>
-<div class="profile-values"><div class="profile-value"><span class="value-icon">♟</span><span>Berlandaskan<br>Nilai Islam</span></div><div class="profile-value"><span class="value-icon">🎓</span><span>Pendidikan<br>Berkualitas</span></div><div class="profile-value"><span class="value-icon">♟</span><span>Membangun<br>Generasi Unggul</span></div></div>
+<section class="section" id="profil" <?= ($siteSettings['show_profile'] ?? '1') !== '1' ? 'hidden' : '' ?>><div class="container profile-grid">
+<div class="profile-copy"><div class="section-tag">Profil Yayasan</div><h2><?= esc($siteSettings['profile_title'] ?? 'Yayasan Bina Insani Grobogan') ?></h2><p><?= esc($siteSettings['profile_text'] ?? 'Yayasan Bina Insani Grobogan adalah lembaga pendidikan Islam yang berkomitmen menyelenggarakan pendidikan berkualitas untuk membangun generasi Qur’ani, berilmu, berakhlak mulia, dan siap menghadapi tantangan masa depan.') ?></p>
+<div class="profile-values"><div class="profile-value"><span class="value-icon">♟</span><span><?= esc($siteSettings['value_one'] ?? 'Berlandaskan Nilai Islam') ?></span></div><div class="profile-value"><span class="value-icon">🎓</span><span><?= esc($siteSettings['value_two'] ?? 'Pendidikan Berkualitas') ?></span></div><div class="profile-value"><span class="value-icon">♟</span><span><?= esc($siteSettings['value_three'] ?? 'Membangun Generasi Unggul') ?></span></div></div>
 <a class="btn profile-more" href="#kontak">Selengkapnya tentang Yayasan &nbsp; →</a>
-</div><div class="profile-photo-wrap"><img class="profile-photo" src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1100&q=85" alt="Siswa belajar bersama" loading="lazy"><div class="quote"><b>❝</b> Mencetak generasi yang berilmu, berakhlak, dan bermanfaat bagi umat.</div></div>
+</div><div class="profile-photo-wrap"><img class="profile-photo" src="<?= esc($siteSettings['profile_image_url'] ?? '') ?: 'https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1100&q=85' ?>" alt="Siswa belajar bersama" loading="lazy"><div class="quote"><b>❝</b> Mencetak generasi yang berilmu, berakhlak, dan bermanfaat bagi umat.</div></div>
 </div></section>
-<section class="section units-section" id="unit"><div class="container">
+<section class="section units-section" id="unit" <?= ($siteSettings['show_units'] ?? '1') !== '1' ? 'hidden' : '' ?>><div class="container">
 <div class="section-head"><div><div class="section-tag">Unit Pendidikan</div><h2>Empat Jenjang Pendidikan</h2><p>Yayasan Bina Insani Grobogan mengelola empat unit pendidikan yang terintegrasi dalam membina generasi Islam sejak usia dini hingga tingkat menengah.</p></div><a class="small-outline" href="#unit">Lihat Semua Unit &nbsp; →</a></div>
 <div class="units-grid">
 <?php if (! empty($schools)): ?>
@@ -177,7 +177,7 @@ $unitPhotos = [
 <?php endforeach ?>
 <?php else: ?><div class="news-empty">Informasi unit pendidikan sedang disiapkan.</div><?php endif ?>
 </div></div></section>
-<section class="section news-section" id="berita"><div class="container">
+<section class="section news-section" id="berita" <?= ($siteSettings['show_news'] ?? '1') !== '1' ? 'hidden' : '' ?>><div class="container">
 <div class="section-head"><div><div class="section-tag">Berita Terbaru</div><h2>Kegiatan dan Informasi Terkini</h2><p>Berita terbaru dari seluruh unit pendidikan Yayasan Bina Insani Grobogan.</p></div><a class="small-outline" href="#berita">Lihat Semua Berita &nbsp; →</a></div>
 <div class="news-grid">
 <?php if (! empty($latestNews)): ?>
@@ -187,7 +187,7 @@ $unitPhotos = [
 <h3><?= esc($news['title']) ?></h3><p><?= esc($news['excerpt'] ?: 'Baca informasi selengkapnya di website unit pendidikan.') ?></p><a class="news-link" href="<?= site_url('sekolah/' . $news['school_slug'] . '#berita') ?>">Baca selengkapnya &nbsp; →</a></div></article><?php endforeach ?>
 <?php else: ?><div class="news-empty"><b>Belum ada berita terbaru.</b><br>Berita yang telah diterbitkan oleh unit pendidikan akan muncul otomatis di sini.</div><?php endif ?>
 </div></div></section>
-<section class="contact-section" id="kontak"><div class="container contact-layout">
+<section class="contact-section" id="kontak" <?= ($siteSettings['show_contact'] ?? '1') !== '1' ? 'hidden' : '' ?>><div class="container contact-layout">
 <img class="contact-photo" src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=85" alt="Gedung Yayasan Bina Insani Grobogan" loading="lazy">
 <div class="contact-info"><div class="section-tag">Kontak Kami</div><h2>Alamat dan Kontak</h2><p>Silakan hubungi kami untuk informasi lebih lanjut terkait program pendidikan di Yayasan Bina Insani Grobogan.</p>
 <div class="contact-list">
@@ -203,5 +203,5 @@ $primaryContact = $contactSchools[0] ?? [];
 <div class="map-card"><div class="map-art"><div class="map-pin">Yayasan Bina Insani<br>Grobogan</div></div><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Yayasan+Bina+Insani+Grobogan" target="_blank" rel="noopener noreferrer">Lihat di Google Maps &nbsp; →</a></div>
 </div></section>
 </main>
-<footer><div class="container footer-main"><a class="footer-brand" href="<?= site_url('/') ?>"><span class="brand-logo">♛</span><span>YAYASAN BINA INSANI GROBOGAN<small>Pendidikan Islam untuk Generasi Qur’ani</small></span></a><nav class="footer-links"><a href="#beranda">Beranda</a><a href="#profil">Profil</a><a href="#unit">Unit Pendidikan</a><a href="#berita">Berita</a><a href="#kontak">Kontak</a></nav><div class="socials"><span>f</span><span>◎</span><span>▶</span><span>↑</span></div></div><div class="copyright">© <?= date('Y') ?> Yayasan Bina Insani Grobogan. All rights reserved.</div></footer>
+<footer><div class="container footer-main"><a class="footer-brand" href="<?= site_url('/') ?>"><span class="brand-logo">♛</span><span>YAYASAN BINA INSANI GROBOGAN<small>Pendidikan Islam untuk Generasi Qur’ani</small></span></a><nav class="footer-links"><a href="#beranda">Beranda</a><a href="#profil">Profil</a><a href="#unit">Unit Pendidikan</a><a href="#berita">Berita</a><a href="#kontak">Kontak</a></nav><div class="socials"><span>f</span><span>◎</span><span>▶</span><span>↑</span></div></div><div class="copyright">© <?= date('Y') ?> <?= esc($siteSettings['site_name'] ?? 'Yayasan Bina Insani Grobogan') ?>. All rights reserved.</div></footer>
 </body></html>
