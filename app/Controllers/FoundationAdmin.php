@@ -122,6 +122,23 @@ class FoundationAdmin extends BaseController
                 return redirect()->to(site_url('admin/yayasan/sekolah'))->with('success', 'Status sekolah berhasil diperbarui.');
             }
 
+            if ($id > 0 && $action === 'delete') {
+                $school = $model->find($id);
+                if (! $school) {
+                    return redirect()->to(site_url('admin/yayasan/sekolah'))->with('error', 'Sekolah tidak ditemukan.');
+                }
+
+                $db = db_connect();
+                foreach (['school_users' => 'akun admin sekolah', 'school_posts' => 'berita sekolah'] as $table => $label) {
+                    if ($db->tableExists($table) && $db->table($table)->where('school_id', $id)->countAllResults() > 0) {
+                        return redirect()->to(site_url('admin/yayasan/sekolah'))->with('error', 'Sekolah tidak dapat dihapus karena masih memiliki ' . $label . '. Nonaktifkan sekolah atau hapus data terkait terlebih dahulu.');
+                    }
+                }
+
+                $model->delete($id);
+                return redirect()->to(site_url('admin/yayasan/sekolah'))->with('success', 'Sekolah berhasil dihapus.');
+            }
+
             $rules = [
                 'name' => 'required|max_length[180]',
                 'slug' => 'required|alpha_dash|min_length[2]|max_length[120]',
