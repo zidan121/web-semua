@@ -23,7 +23,7 @@ class Home extends BaseController
             ->where('posts.status', 'published')
             ->orderBy('posts.published_at', 'DESC')
             ->orderBy('posts.id', 'DESC')
-            ->limit(3)
+            ->limit(4)
             ->get()
             ->getResultArray();
 
