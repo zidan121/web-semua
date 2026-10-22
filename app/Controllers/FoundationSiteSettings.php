@@ -25,8 +25,10 @@ class FoundationSiteSettings extends Controller
                     $name=$file->getRandomName();
                     if(!$file->move($folder,$name))return redirect()->back()->withInput()->with('error','Gagal menyimpan gambar.');
                     $values[$setting]='uploads/foundation/'.$name;
-                } elseif(isset($settings[$setting])) {
-                    $values[$setting]=$settings[$setting];
+                } elseif($setting==='logo_path') {
+                    $values[$setting]=$settings[$setting]??'';
+                } elseif(in_array($setting,['hero_image_url','profile_image_url'],true) && ($values[$setting]??'')==='') {
+                    $values[$setting]=$settings[$setting]??'';
                 }
                 if($this->request->getPost('remove_'.$setting)==='1')$values[$setting]='';
             }
