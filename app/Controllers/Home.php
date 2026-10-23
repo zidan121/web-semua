@@ -83,7 +83,7 @@ class Home extends BaseController
                             }
                         }
                     }
-                } catch (\\Throwable $e) {
+                } catch (\Throwable $e) {
                     log_message('warning', 'Gagal mengambil REST API berita SMPIT: {message}', ['message' => $e->getMessage()]);
                 }
 
@@ -135,7 +135,7 @@ class Home extends BaseController
                             }
                             libxml_clear_errors();
                         }
-                    } catch (\\Throwable $e) {
+                    } catch (\Throwable $e) {
                         log_message('warning', 'Gagal mengambil RSS berita SMPIT: {message}', ['message' => $e->getMessage()]);
                     }
                 }
