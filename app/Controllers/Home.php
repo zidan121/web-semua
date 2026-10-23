@@ -72,7 +72,7 @@ class Home extends BaseController
                     }
                 }
             }
-        } catch (\\Throwable $e) {
+        } catch (\Throwable $e) {
             log_message('warning', 'Gagal mengambil berita SMPIT dari WordPress API: {message}', ['message' => $e->getMessage()]);
         }
         if ($smpitNews !== []) {
