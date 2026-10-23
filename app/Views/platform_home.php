@@ -183,9 +183,9 @@ $unitPhotos = [
 <div class="news-grid">
 <?php if (! empty($latestNews)): ?>
 <?php foreach ($latestNews as $news): ?><article class="news-card"><div class="news-cover">
-<?php if (! empty($news['cover_image_path'])): ?><img src="<?= base_url(esc($news['cover_image_path'])) ?>" alt="<?= esc($news['title']) ?>" loading="lazy"><?php else: ?><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Kegiatan pendidikan" loading="lazy"><?php endif ?>
+<?php if (! empty($news['cover_image_url'] ?? $news['cover_image_path'])): ?><img src="<?= esc(preg_match('#^https?://#i', (string) ($news['cover_image_url'] ?? $news['cover_image_path'])) ? ($news['cover_image_url'] ?? $news['cover_image_path']) : base_url($news['cover_image_path'])) ?>" alt="<?= esc($news['title']) ?>" loading="lazy"><?php else: ?><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Kegiatan pendidikan" loading="lazy"><?php endif ?>
 </div><div class="news-body"><div class="news-meta"><span class="news-unit"><?= esc($news['school_name']) ?></span><?php if (! empty($news['published_at'])): ?><span><?= esc(date('d M Y', strtotime($news['published_at']))) ?></span><?php endif ?></div>
-<h3><?= esc($news['title']) ?></h3><p><?= esc($news['excerpt'] ?: 'Baca informasi selengkapnya di website unit pendidikan.') ?></p><a class="news-link" href="<?= site_url('sekolah/' . $news['school_slug'] . '#berita') ?>">Baca selengkapnya &nbsp; →</a></div></article><?php endforeach ?>
+<h3><?= esc($news['title']) ?></h3><p><?= esc($news['excerpt'] ?: 'Baca informasi selengkapnya di website unit pendidikan.') ?></p><a class="news-link" href="<?= esc($news['news_url'] ?? site_url('sekolah/' . $news['school_slug'] . '#berita')) ?>" <?= ! empty($news['news_url']) ? 'target="_blank" rel="noopener noreferrer"' : '' ?>>Baca selengkapnya &nbsp; →</a></div></article><?php endforeach ?>
 <?php else: ?><div class="news-empty"><b>Belum ada berita terbaru.</b><br>Berita yang telah diterbitkan oleh unit pendidikan akan muncul otomatis di sini.</div><?php endif ?>
 </div></div></section>
 <section class="contact-section" id="kontak" <?= ($siteSettings['show_contact'] ?? '1') !== '1' ? 'hidden' : '' ?>><div class="container contact-layout">
